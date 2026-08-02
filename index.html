@@ -4,8 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spot it!</title>
+    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <main>
+        <section id="start-screen">
+            <h1>Spot it!</h1>
+            <p>Find all the differences before time runs out</p>
+            <button id="start-button"class="start">Start game</button>
+
+        </section>
+   
+    
+        <section id="difficulty-screen">
+            <h2>Choose Difficulty</h2>
+            <button id="easy-button" class="difficulty-button easy">Easy</button>
+            <button id="medium-button" class="difficulty-button medium">Medium</button>
+           <button id="hard-button" class="difficulty-button hard">Hard</button>
+        </section>
+
+
+        <section id="game-screen">
+            <p id="level-name"></p>
+
+
+
+    <div>
+        <p>Time: <span id="timer">60</span></p>
+        <p>Score: <span id="score">0</span></p>
+        
+
+    </div>
+
+    <div id="original-container">
+    <img src="./imges/easy one.png" alt="Original image" id="original-image">
+</div>
+
+<div id="changed-container">
+    <img src="./imges/easy two.png" alt="Changed image" id="changed-image">
+
+    <div id="grid-container"></div>
+</div>
+
+    <p id="differences-left">Differences left: 3</p>
+
+    <button id="back-button">
+    Back
+
+    
+</button>
+</section>
+
+<section id="result-screen">
+
+    <h2 id="result-message"></h2>
+
+    <button id="restart-button">
+        Play Again
+    </button>
+
+</section>
+ </main>
     
 </body>
 </html>
