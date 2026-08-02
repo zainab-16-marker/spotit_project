@@ -41,6 +41,7 @@ button {
     margin: 10px;
     font-size: 16px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .easy {
@@ -107,4 +108,59 @@ button {
 
 .grid-box {
     border: 1px solid red;
+}
+.back-button {
+    background-color: #6c757d;
+    padding: 14px 35px;
+    font-size: 16px;
+}
+
+.restart-button {
+    background-color: #2EC4B6;
+    padding: 14px 35px;
+    font-size: 16px;
+}
+
+.back-button:hover,
+.restart-button:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.game-info p {
+    background-color: #f7f5f2;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin: 0;
+    font-weight: bold;
+}
+
+#timer,
+#score {
+    font-size: 24px;
+}
+.game-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.game-info p {
+    background-color: #f7f5f2;
+    padding: 12px 20px;
+    border-radius: 12px;
+    margin: 0;
+    font-weight: bold;
+}
+
+#timer,
+#score {
+    font-size: 24px;
 }
