@@ -23,7 +23,7 @@ let correctDifferences = [2, 6, 9];
 
 let score = 0;
 let gridSize = 9;
-let differencesLeft = 3;
+let differencesLeft = 0;
 
 function createGrid() {
 
@@ -88,6 +88,8 @@ easyButton.addEventListener("click", function () {
 
     originalImage.src = "./imges/easy one.png";
     changedImage.src = "./imges/easy two.png";
+    differencesLeft = 3;
+differencesDisplay.textContent = "Differences left: " + differencesLeft;
     gridSize = 9;
 createGrid();
 
@@ -105,6 +107,8 @@ mediumButton.addEventListener("click", function () {
 
     originalImage.src = "./imges/mid one .png";
     changedImage.src = "./imges/mid two.png";
+    differencesLeft = 5;
+differencesDisplay.textContent = "Differences left: " + differencesLeft;
     gridSize = 9;
 createGrid();
      
@@ -124,6 +128,8 @@ hardButton.addEventListener("click", function () {
 
     originalImage.src = "./imges/difcult one.png";
     changedImage.src = "./imges/difuclt two .png";
+    differencesLeft = 7;
+differencesDisplay.textContent = "Differences left: " + differencesLeft;
 gridSize = 25;
 createGrid();
 correctDifferences = [2, 7, 9, 10, 12,20,21,22,23,24];
