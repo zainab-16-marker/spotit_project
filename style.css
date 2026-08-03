@@ -76,14 +76,15 @@ button {
 #original-container,
 #changed-container {
     display: inline-block;
-    width: 45%;
+    width: 350px;
+    height: 220px;
+    margin: 10px;
     vertical-align: top;
 }
 
 #original-image,
 #changed-image {
-    width: 100%;
-    max-width: 350px;
+    width: 350px;
     height: 220px;
     object-fit: cover;
     border-radius: 15px;
@@ -98,17 +99,20 @@ button {
     top: 0;
     left: 0;
 
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 220px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+
+    z-index: 2;
 }
 
 .grid-box {
-    border: 1px solid red;
+    border: 2px solid red;
 }
+
 .back-button {
     background-color: #6c757d;
     padding: 14px 35px;
@@ -163,4 +167,10 @@ button {
 #timer,
 #score {
     font-size: 24px;
+}
+
+#difficulty-screen,
+#game-screen,
+#result-screen {
+    display: none;
 }

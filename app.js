@@ -1,32 +1,130 @@
+const startButton = document.querySelector("#start-button");
+
+const startScreen = document.querySelector("#start-screen");
+const difficultyScreen = document.querySelector("#difficulty-screen");
+const gameScreen = document.querySelector("#game-screen");
+
+const easyButton = document.querySelector("#easy-button");
+const mediumButton = document.querySelector("#medium-button");
+const hardButton = document.querySelector("#hard-button");
+
+const levelName = document.querySelector("#level-name");
+
+const originalImage = document.querySelector("#original-image");
+const changedImage = document.querySelector("#changed-image");
+const scoreDisplay = document.querySelector("#score");
+const differencesDisplay = document.querySelector("#differences-left");
+
+
+
 const gridContainer = document.querySelector("#grid-container");
 
-const correctDifferences = [3, 6, 9];
+let correctDifferences = [2, 6, 9];
 
 let score = 0;
+let gridSize = 9;
+let differencesLeft = 3;
 
-for (let i = 1; i <= 9; i++) {
-    const box = document.createElement("div");
+function createGrid() {
 
-    box.classList.add("grid-box");
+    gridContainer.innerHTML = "";
+    gridContainer.style.gridTemplateColumns = `repeat(${Math.sqrt(gridSize)}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${Math.sqrt(gridSize)}, 1fr)`;
 
-    box.dataset.number = i;
+    for (let i = 1; i <= gridSize; i++) {
 
-    box.addEventListener("click", function () {
+        const box = document.createElement("div");
 
-        const boxNumber = Number(box.dataset.number);
+        box.classList.add("grid-box");
 
-        if (correctDifferences.includes(boxNumber)) {
-            score++;
-            //console.log("Correct!");
-            console.log("Score:", score);
+        box.dataset.number = i;
 
-            box.style.backgroundColor = "rgba(0,255,0,0.3)";
-        } 
-        else {
-           // console.log("Wrong!");
-        }
 
-    });
+        box.addEventListener("click", function () {
 
-    gridContainer.appendChild(box);
+            const boxNumber = Number(box.dataset.number);
+
+            if (correctDifferences.includes(boxNumber)) {
+
+                score++;
+                 differencesLeft--;
+                scoreDisplay.textContent = score;
+                differencesDisplay.textContent = "Differences left: " + differencesLeft;
+
+
+                //console.log("Score:", score);
+
+                box.style.backgroundColor = "rgba(0,255,0,0.3)";
+
+            }
+
+        });
+
+
+        gridContainer.appendChild(box);
+
+    }
 }
+
+createGrid();
+// Start Button
+startButton.addEventListener("click", function () {
+
+    startScreen.style.display = "none";
+
+    difficultyScreen.style.display = "block";
+
+});
+
+
+// Easy Level
+easyButton.addEventListener("click", function () {
+
+    difficultyScreen.style.display = "none";
+
+    gameScreen.style.display = "block";
+
+    levelName.textContent = "Easy Level";
+
+    originalImage.src = "./imges/easy one.png";
+    changedImage.src = "./imges/easy two.png";
+    gridSize = 9;
+createGrid();
+
+});
+
+
+// Medium Level
+mediumButton.addEventListener("click", function () {
+
+    difficultyScreen.style.display = "none";
+
+    gameScreen.style.display = "block";
+
+    levelName.textContent = "Medium Level";
+
+    originalImage.src = "./imges/mid one .png";
+    changedImage.src = "./imges/mid two.png";
+    gridSize = 9;
+createGrid();
+     
+    correctDifferences = [2, 3, 7, 8, 9];
+
+});
+
+
+// Hard Level
+hardButton.addEventListener("click", function () {
+
+    difficultyScreen.style.display = "none";
+
+    gameScreen.style.display = "block";
+
+    levelName.textContent = "Hard Level";
+
+    originalImage.src = "./imges/difcult one.png";
+    changedImage.src = "./imges/difuclt two .png";
+gridSize = 25;
+createGrid();
+correctDifferences = [2, 7, 9, 10, 12,20,21,22,23,24];
+});
