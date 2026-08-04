@@ -54,6 +54,7 @@ function createGrid() {
 
                 score++;
                  differencesLeft--;
+                 box.style.pointerEvents = "none";
                 scoreDisplay.textContent = score;
                 differencesDisplay.textContent = differencesLeft;
                 if (differencesLeft === 0) {

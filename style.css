@@ -391,3 +391,44 @@ button:hover {
     margin: 0 0 20px 0;
     text-shadow: 0 0 10px #2EC4B6;
 }
+
+#start-screen {
+    text-align: center;
+}
+
+#start-screen > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#difficulty-screen {
+    text-align: center;
+}
+
+#difficulty-screen > * {
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Difficulty Cards */
+
+/* Difficulty Text Layout */
+
+.difficulty-options {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+
+.level {
+    text-align: center;
+}
+
+
+.level p {
+    color: #CBD5E1;
+    font-size: 16px;
+    margin-top: 5px;
+}
