@@ -3,26 +3,24 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f5f2;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+   background: linear-gradient(135deg, #dffaf6, #fff5f8);
     color: #333;
     text-align: center;
     margin: 0;
     padding: 40px;
 }
-
 main {
     max-width: 900px;
     margin: auto;
 }
 
 section {
-    background-color: white;
+    background: rgba(255,255,255,0.9);
     padding: 40px;
-    border-radius: 20px;
-    margin-top: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
-
 h1 {
     font-size: 50px;
     letter-spacing: 2px;
@@ -36,12 +34,13 @@ p {
 button {
     color: white;
     border: none;
-    border-radius: 12px;
-    padding: 14px 30px;
+    border-radius: 15px;
+    padding: 14px 35px;
     margin: 10px;
-    font-size: 16px;
+    font-size: 17px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 .easy {
@@ -62,16 +61,27 @@ button {
     opacity: 0.85;
 }
 
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
 #start-screen {
     padding: 60px 40px;
+}
+#start-screen h1 {
+    color: #2EC4B6;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+#start-screen p {
+    color: #666;
 }
 .start {
     background-color: #2EC4B6;
     padding: 15px 40px;
     font-size: 18px;
 }
-
 
 #original-container,
 #changed-container {
@@ -80,6 +90,8 @@ button {
     height: 220px;
     margin: 10px;
     vertical-align: top;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 #original-image,
@@ -87,7 +99,8 @@ button {
     width: 350px;
     height: 220px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 #changed-container {
@@ -110,9 +123,9 @@ button {
 }
 
 .grid-box {
-    border: 2px solid red;
+    border: none;
+    cursor: pointer;
 }
-
 .back-button {
     background-color: #6c757d;
     padding: 14px 35px;
@@ -138,13 +151,12 @@ button {
 }
 
 .game-info p {
-    background-color: #f7f5f2;
-    padding: 12px 20px;
-    border-radius: 12px;
-    margin: 0;
-    font-weight: bold;
+    background-color: white;
+    border: 2px solid #2EC4B6;
+    color: #333;
+    padding: 15px 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-
 #timer,
 #score {
     font-size: 24px;
@@ -173,4 +185,36 @@ button {
 #game-screen,
 #result-screen {
     display: none;
+}
+
+#game-screen {
+    background: linear-gradient(180deg, #ffffff, #f8ffff);
+}
+
+#level-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2EC4B6;
+}
+#result-screen h2 {
+    font-size: 40px;
+    color: #2EC4B6;
+}
+
+#result-icon {
+    font-size: 50px;
+    margin: 20px;
+    animation: pop 0.8s infinite alternate;
+}
+
+@keyframes pop {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
 }

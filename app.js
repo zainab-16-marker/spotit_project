@@ -7,7 +7,8 @@ const gameScreen = document.querySelector("#game-screen");
 const easyButton = document.querySelector("#easy-button");
 const mediumButton = document.querySelector("#medium-button");
 const hardButton = document.querySelector("#hard-button");
-
+const backButton = document.querySelector("#back-button");
+const restartButton = document.querySelector("#restart-button");
 const levelName = document.querySelector("#level-name");
 
 const originalImage = document.querySelector("#original-image");
@@ -63,14 +64,17 @@ function createGrid() {
 
     resultScreen.style.display = "block";
 
-    resultMessage.textContent = "You Win!";
+    
+    resultMessage.textContent = "You Win! 🎉";
+resultIcon.textContent = "⭐🎊✨";
+finalScore.textContent = "Score: " + score;
 
 }
 
 
                 //console.log("Score:", score);
 
-                box.style.backgroundColor = "rgba(0,255,0,0.3)";
+                box.style.backgroundColor = "rgba(46,196,182,0.5)";
 
             }
 
@@ -104,7 +108,9 @@ function startTimer() {
 
     resultScreen.style.display = "block";
 
-    resultMessage.textContent = "Time's Up!";
+    resultMessage.textContent = "Time's Up! 😢";
+resultIcon.textContent = "⏰";
+    finalScore.textContent = "Score: " + score;
 
         }
 
@@ -190,4 +196,33 @@ timerDisplay.textContent = time;
 startTimer();
 
 correctDifferences = [2, 7,8, 9, 10, 12,20,21,22,23,24];
+});
+
+
+backButton.addEventListener("click", function () {
+
+    clearInterval(timer);
+
+    gameScreen.style.display = "none";
+
+    difficultyScreen.style.display = "block";
+
+});
+restartButton.addEventListener("click", function () {
+
+    clearInterval(timer);
+
+    resultScreen.style.display = "none";
+
+    startScreen.style.display = "block";
+
+    score = 0;
+    scoreDisplay.textContent = score;
+
+    time = 60;
+    timerDisplay.textContent = time;
+
+    differencesLeft = 0;
+    differencesDisplay.textContent = "Differences left: 0";
+
 });
