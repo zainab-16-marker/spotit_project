@@ -14,18 +14,23 @@ const originalImage = document.querySelector("#original-image");
 const changedImage = document.querySelector("#changed-image");
 const scoreDisplay = document.querySelector("#score");
 const differencesDisplay = document.querySelector("#differences-left");
-
+const timerDisplay = document.querySelector("#timer");
 
 
 const gridContainer = document.querySelector("#grid-container");
-
+const resultScreen = document.querySelector("#result-screen");
+const resultMessage = document.querySelector("#result-message");
+const finalScore = document.querySelector("#final-score");
 let correctDifferences = [2, 6, 9];
 
 let score = 0;
 let gridSize = 9;
 let differencesLeft = 0;
-
+let time = 60;
+let timer;
 function createGrid() {
+
+
 
     gridContainer.innerHTML = "";
     gridContainer.style.gridTemplateColumns = `repeat(${Math.sqrt(gridSize)}, 1fr)`;
@@ -50,6 +55,17 @@ function createGrid() {
                  differencesLeft--;
                 scoreDisplay.textContent = score;
                 differencesDisplay.textContent = "Differences left: " + differencesLeft;
+                if (differencesLeft === 0) {
+
+    clearInterval(timer);
+
+    gameScreen.style.display = "none";
+
+    resultScreen.style.display = "block";
+
+    resultMessage.textContent = "You Win!";
+
+}
 
 
                 //console.log("Score:", score);
@@ -67,6 +83,34 @@ function createGrid() {
 }
 
 createGrid();
+
+
+function startTimer() {
+
+    clearInterval(timer);
+
+    timer = setInterval(function () {
+
+        time--;
+
+        timerDisplay.textContent = time;
+
+        if (time <= 0) {
+
+            clearInterval(timer);
+
+            timerDisplay.textContent = 0;
+             gameScreen.style.display = "none";
+
+    resultScreen.style.display = "block";
+
+    resultMessage.textContent = "Time's Up!";
+
+        }
+
+    }, 1000);
+
+}
 // Start Button
 startButton.addEventListener("click", function () {
 
@@ -92,6 +136,10 @@ easyButton.addEventListener("click", function () {
 differencesDisplay.textContent = "Differences left: " + differencesLeft;
     gridSize = 9;
 createGrid();
+time = 20;
+timerDisplay.textContent = time;
+
+startTimer();
 
 });
 
@@ -111,7 +159,11 @@ mediumButton.addEventListener("click", function () {
 differencesDisplay.textContent = "Differences left: " + differencesLeft;
     gridSize = 9;
 createGrid();
-     
+     time = 15;
+timerDisplay.textContent = time;
+
+startTimer();
+
     correctDifferences = [2, 3, 7, 8, 9];
 
 });
@@ -132,5 +184,10 @@ hardButton.addEventListener("click", function () {
 differencesDisplay.textContent = "Differences left: " + differencesLeft;
 gridSize = 25;
 createGrid();
-correctDifferences = [2, 7, 9, 10, 12,20,21,22,23,24];
+time = 15;
+timerDisplay.textContent = time;
+
+startTimer();
+
+correctDifferences = [2, 7,8, 9, 10, 12,20,21,22,23,24];
 });
