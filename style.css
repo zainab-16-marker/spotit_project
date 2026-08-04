@@ -4,23 +4,25 @@
 
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
-   background: linear-gradient(135deg, #dffaf6, #fff5f8);
-    color: #333;
+    background: linear-gradient(135deg, #0F172A, #111827);
+    color: white;
     text-align: center;
     margin: 0;
     padding: 40px;
 }
+
 main {
     max-width: 900px;
     margin: auto;
 }
 
 section {
-    background: rgba(255,255,255,0.9);
+    background: #1E293B;
     padding: 40px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
 }
+
 h1 {
     font-size: 50px;
     letter-spacing: 2px;
@@ -31,6 +33,9 @@ p {
     font-size: 18px;
 }
 
+
+/* Buttons */
+
 button {
     color: white;
     border: none;
@@ -40,20 +45,30 @@ button {
     font-size: 17px;
     cursor: pointer;
     transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+
+/* Difficulty Buttons */
+
 .easy {
-    background-color: #4CAF50;
+    background: linear-gradient(135deg,#22C55E,#16A34A);
 }
 
 .medium {
-    background-color: #F4C542;
+    background: linear-gradient(135deg,#FACC15,#EAB308);
 }
 
 .hard {
-    background-color: #E74C3C;
+    background: linear-gradient(135deg,#EF4444,#DC2626);
 }
+
+
 .easy:hover,
 .medium:hover,
 .hard:hover,
@@ -61,30 +76,35 @@ button {
     opacity: 0.85;
 }
 
-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+
+/* Start Screen */
 
 #start-screen {
     padding: 60px 40px;
 }
+
 #start-screen h1 {
     color: #2EC4B6;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+    text-shadow: 0 0 20px #2EC4B6;
 }
 
 #start-screen p {
-    color: #666;
+    color: #CBD5E1;
 }
+
+
 .start {
-    background-color: #2EC4B6;
+    background: linear-gradient(135deg,#2EC4B6,#22D3EE);
     padding: 15px 40px;
     font-size: 18px;
 }
 
+
+/* Images */
+
 #original-container,
 #changed-container {
+
     display: inline-block;
     width: 350px;
     height: 220px;
@@ -94,20 +114,27 @@ button:hover {
     overflow: hidden;
 }
 
+
 #original-image,
 #changed-image {
+
     width: 350px;
     height: 220px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 0 25px rgba(46,196,182,0.5);
 }
+
+
+/* Grid */
 
 #changed-container {
     position: relative;
 }
 
+
 #grid-container {
+
     position: absolute;
     top: 0;
     left: 0;
@@ -116,129 +143,246 @@ button:hover {
     height: 220px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
 
     z-index: 2;
 }
 
+
 .grid-box {
+
     border: none;
     cursor: pointer;
-}
-.back-button {
-    background-color: #6c757d;
-    padding: 14px 35px;
-    font-size: 16px;
+
 }
 
-.restart-button {
-    background: linear-gradient(135deg,#2EC4B6,#56e0d0);
-    padding: 16px 45px;
-    font-size: 18px;
-}
 
-.back-button:hover,
-.restart-button:hover {
-    opacity: 0.85;
-    transform: scale(1.05);
-}
+/* Game Info */
+
 .game-info {
+
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 25px;
     margin-bottom: 25px;
-}
 
-.game-info p {
-    background-color: white;
-    border: 2px solid #2EC4B6;
-    color: #333;
-    padding: 15px 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 
 .info-card {
-    background: white;
+
+    background: #0F172A;
+
     border: 2px solid #2EC4B6;
-    border-radius: 18px;
+
+    border-radius: 20px;
+
     padding: 15px 25px;
+
     min-width: 120px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+    box-shadow: 0 0 20px rgba(46,196,182,0.25);
+
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
+
 }
+
 
 .info-card span {
+
     font-size: 16px;
-    color: #666;
+
+    color: #2EC4B6;
+
+    font-weight: bold;
+
 }
+
 
 .info-card strong {
+
     font-size: 28px;
-    color: #2EC4B6;
-}
-#timer,
-#score {
-    font-size: 24px;
-}
-.game-info {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 25px;
+
+    color: #22D3EE;
+
+    text-shadow: 0 0 10px #22D3EE;
+
 }
 
-.game-info p {
-    background-color: #f7f5f2;
-    padding: 12px 20px;
-    border-radius: 12px;
-    margin: 0;
-    font-weight: bold;
-}
 
 #timer,
 #score {
+
     font-size: 24px;
+
 }
 
-#difficulty-screen,
-#game-screen,
-#result-screen {
-    display: none;
-}
+
+/* Game Screen */
 
 #game-screen {
-    background: linear-gradient(180deg, #ffffff, #f8ffff);
+
+    background: linear-gradient(180deg,#1E293B,#0F172A);
+
 }
+
 
 #level-name {
+
     font-size: 32px;
+
     font-weight: bold;
+
     color: #2EC4B6;
-    margin-bottom: 20px;
-}
-#result-screen h2 {
-    font-size: 40px;
-    color: #2EC4B6;
+
+    margin-bottom:20px;
+
 }
 
-#result-icon {
-    font-size: 50px;
-    margin: 20px;
-    animation: pop 0.8s infinite alternate;
+
+/* Back Button */
+
+.back-button {
+
+    background: linear-gradient(135deg,#64748B,#475569);
+
+    padding:14px 35px;
+
 }
+
+
+/* Restart Button */
+
+.restart-button {
+
+    background: linear-gradient(135deg,#2EC4B6,#22D3EE);
+
+    padding:16px 45px;
+
+    font-size:18px;
+
+}
+
+
+/* Result */
+
+#result-screen h2 {
+
+    font-size:45px;
+
+    color:#2EC4B6;
+
+    text-shadow:0 0 15px #2EC4B6;
+
+}
+
+
+#final-score {
+
+    font-size:25px;
+
+    color:#CBD5E1;
+
+    font-weight:bold;
+
+}
+
+
+#result-icon {
+
+    font-size:50px;
+
+    margin:20px;
+
+    animation: pop 0.8s infinite alternate;
+
+}
+
 
 @keyframes pop {
 
     from {
-        transform: scale(1);
+
+        transform:scale(1);
+
     }
+
 
     to {
-        transform: scale(1.2);
+
+        transform:scale(1.2);
+
     }
 
+}
+
+
+#difficulty-screen,
+#game-screen,
+#result-screen {
+
+    display:none;
+
+}
+/* Difficulty Screen */
+
+#difficulty-screen h2 {
+    font-size: 38px;
+    color: #2EC4B6;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(46,196,182,0.7);
+}
+
+
+#difficulty-screen button {
+    width: 180px;
+    height: 70px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+
+/* Easy */
+
+.easy {
+    background: linear-gradient(135deg,#22C55E,#16A34A);
+    box-shadow: 0 0 20px rgba(34,197,94,0.5);
+}
+
+
+/* Medium */
+
+.medium {
+    background: linear-gradient(135deg,#FACC15,#EAB308);
+    color: #111;
+    box-shadow: 0 0 20px rgba(250,204,21,0.5);
+}
+
+
+/* Hard */
+
+.hard {
+    background: linear-gradient(135deg,#EF4444,#DC2626);
+    box-shadow: 0 0 20px rgba(239,68,68,0.5);
+}
+
+
+#difficulty-screen button:hover {
+
+    transform: translateY(-8px) scale(1.05);
+
+}
+.mini-logo {
+    text-align: left;
+    color: #2EC4B6;
+    font-size: 22px;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 10px #2EC4B6;
 }

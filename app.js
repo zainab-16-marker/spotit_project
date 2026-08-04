@@ -100,18 +100,35 @@ function startTimer() {
 
         timerDisplay.textContent = time;
 
+
+        if (time <= 10 && time > 0) {
+
+            timerDisplay.style.color = "#EF4444";
+            timerDisplay.style.textShadow = "0 0 10px #EF4444";
+
+        } else {
+
+            timerDisplay.style.color = "#22D3EE";
+            timerDisplay.style.textShadow = "0 0 10px #22D3EE";
+
+        }
+
+
         if (time <= 0) {
 
             clearInterval(timer);
 
             timerDisplay.textContent = 0;
-             gameScreen.style.display = "none";
 
-    resultScreen.style.display = "block";
+            gameScreen.style.display = "none";
 
-    resultMessage.textContent = "Time's Up! 😢";
-resultIcon.textContent = "⏰";
-    finalScore.textContent = "Score: " + score;
+            resultScreen.style.display = "block";
+
+            resultMessage.textContent = "Time's Up! 😢";
+
+            resultIcon.textContent = "⏰";
+
+            finalScore.textContent = "Score: " + score;
 
         }
 
@@ -151,7 +168,7 @@ easyButton.addEventListener("click", function () {
     gridSize = 9;
     createGrid();
 
-    time = 30;
+    time = 18;
     timerDisplay.textContent = time;
 
     startTimer();
@@ -174,7 +191,7 @@ mediumButton.addEventListener("click", function () {
 differencesDisplay.textContent = differencesLeft;
     gridSize = 9;
 createGrid();
-     time = 18;
+     time = 15;
 timerDisplay.textContent = time;
 
 startTimer();
@@ -228,7 +245,7 @@ restartButton.addEventListener("click", function () {
     score = 0;
     scoreDisplay.textContent = score;
 
-    time = 60;
+    time = 20;
     timerDisplay.textContent = time;
 
     differencesLeft = 0;
