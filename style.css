@@ -12,7 +12,7 @@ body {
 }
 
 main {
-    max-width: 900px;
+     max-width: 1200px;
     margin: auto;
 }
 
@@ -21,6 +21,7 @@ section {
     padding: 40px;
     border-radius: 30px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    width: 100%;
 }
 
 h1 {
@@ -106,8 +107,8 @@ button:hover {
 #changed-container {
 
     display: inline-block;
-    width: 350px;
-    height: 220px;
+    width: 450px;
+    height: 280px;
     margin: 10px;
     vertical-align: top;
     border-radius: 20px;
@@ -118,8 +119,8 @@ button:hover {
 #original-image,
 #changed-image {
 
-    width: 350px;
-    height: 220px;
+    width: 450px;
+    height: 280px;
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(46,196,182,0.5);
@@ -139,8 +140,8 @@ button:hover {
     top: 0;
     left: 0;
 
-    width: 350px;
-    height: 220px;
+    width: 450px;
+    height: 280px;
 
     display: grid;
 
@@ -253,6 +254,10 @@ button:hover {
     background: linear-gradient(135deg,#64748B,#475569);
 
     padding:14px 35px;
+
+    display: block;
+
+    margin: 30px auto;
 
 }
 
