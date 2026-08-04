@@ -133,9 +133,9 @@ button:hover {
 }
 
 .restart-button {
-    background-color: #2EC4B6;
-    padding: 14px 35px;
-    font-size: 16px;
+    background: linear-gradient(135deg,#2EC4B6,#56e0d0);
+    padding: 16px 45px;
+    font-size: 18px;
 }
 
 .back-button:hover,
@@ -156,6 +156,29 @@ button:hover {
     color: #333;
     padding: 15px 25px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+
+.info-card {
+    background: white;
+    border: 2px solid #2EC4B6;
+    border-radius: 18px;
+    padding: 15px 25px;
+    min-width: 120px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-card span {
+    font-size: 16px;
+    color: #666;
+}
+
+.info-card strong {
+    font-size: 28px;
+    color: #2EC4B6;
 }
 #timer,
 #score {
@@ -192,9 +215,10 @@ button:hover {
 }
 
 #level-name {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     color: #2EC4B6;
+    margin-bottom: 20px;
 }
 #result-screen h2 {
     font-size: 40px;

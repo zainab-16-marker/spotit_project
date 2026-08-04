@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spot it!</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script defer src="./app.js"></script>
+    
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -29,13 +31,24 @@
             <p id="level-name"></p>
 
 
+<div class="game-info">
 
-    <div  class="game-info">
-        <p>Time: <span id="timer">60</span></p>
-        <p>Score: <span id="score">0</span></p>
-        
-
+    <div class="info-card">
+        <span>⏱️ Time</span>
+        <strong id="timer">60</strong>
     </div>
+
+    <div class="info-card">
+        <span>⭐ Score</span>
+        <strong id="score">0</strong>
+    </div>
+
+    <div class="info-card">
+        <span>🎯 Left</span>
+        <strong id="differences-left">3</strong>
+    </div>
+
+</div>
 
     <div id="original-container">
     <img src="./imges/easy one.png" alt="Original image" id="original-image">
@@ -47,7 +60,7 @@
     <div id="grid-container"></div>
 </div>
 
-    <p id="differences-left">Differences left: 3</p>
+    <!-- <p id="differences-left">Differences left: 3</p> -->
 
     <button id="back-button" class="back-button">
     Back
@@ -59,6 +72,7 @@
 <section id="result-screen">
 
     <h2 id="result-message"></h2>
+      <div id="result-icon"></div>
      <p id="final-score"></p>
 
     <button id="restart-button" class="restart-button">
@@ -68,5 +82,6 @@
 </section>
  </main>
     
+
 </body>
 </html>

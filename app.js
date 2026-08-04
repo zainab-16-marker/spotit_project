@@ -17,7 +17,7 @@ const scoreDisplay = document.querySelector("#score");
 const differencesDisplay = document.querySelector("#differences-left");
 const timerDisplay = document.querySelector("#timer");
 
-
+const resultIcon = document.querySelector("#result-icon");
 const gridContainer = document.querySelector("#grid-container");
 const resultScreen = document.querySelector("#result-screen");
 const resultMessage = document.querySelector("#result-message");
@@ -55,7 +55,7 @@ function createGrid() {
                 score++;
                  differencesLeft--;
                 scoreDisplay.textContent = score;
-                differencesDisplay.textContent = "Differences left: " + differencesLeft;
+                differencesDisplay.textContent = differencesLeft;
                 if (differencesLeft === 0) {
 
     clearInterval(timer);
@@ -66,9 +66,10 @@ function createGrid() {
 
     
     resultMessage.textContent = "You Win! 🎉";
+    
 resultIcon.textContent = "⭐🎊✨";
 finalScore.textContent = "Score: " + score;
-
+confetti();
 }
 
 
@@ -130,6 +131,11 @@ startButton.addEventListener("click", function () {
 // Easy Level
 easyButton.addEventListener("click", function () {
 
+    score = 0;
+    scoreDisplay.textContent = score;
+
+    correctDifferences = [2, 6, 9];
+
     difficultyScreen.style.display = "none";
 
     gameScreen.style.display = "block";
@@ -138,14 +144,17 @@ easyButton.addEventListener("click", function () {
 
     originalImage.src = "./imges/easy one.png";
     changedImage.src = "./imges/easy two.png";
-    differencesLeft = 3;
-differencesDisplay.textContent = "Differences left: " + differencesLeft;
-    gridSize = 9;
-createGrid();
-time = 20;
-timerDisplay.textContent = time;
 
-startTimer();
+    differencesLeft = 3;
+   differencesDisplay.textContent = differencesLeft;
+
+    gridSize = 9;
+    createGrid();
+
+    time = 30;
+    timerDisplay.textContent = time;
+
+    startTimer();
 
 });
 
@@ -162,10 +171,10 @@ mediumButton.addEventListener("click", function () {
     originalImage.src = "./imges/mid one .png";
     changedImage.src = "./imges/mid two.png";
     differencesLeft = 5;
-differencesDisplay.textContent = "Differences left: " + differencesLeft;
+differencesDisplay.textContent = differencesLeft;
     gridSize = 9;
 createGrid();
-     time = 15;
+     time = 18;
 timerDisplay.textContent = time;
 
 startTimer();
@@ -187,10 +196,10 @@ hardButton.addEventListener("click", function () {
     originalImage.src = "./imges/difcult one.png";
     changedImage.src = "./imges/difuclt two .png";
     differencesLeft = 7;
-differencesDisplay.textContent = "Differences left: " + differencesLeft;
+differencesDisplay.textContent = differencesLeft;
 gridSize = 25;
 createGrid();
-time = 15;
+time = 20;
 timerDisplay.textContent = time;
 
 startTimer();
@@ -223,6 +232,5 @@ restartButton.addEventListener("click", function () {
     timerDisplay.textContent = time;
 
     differencesLeft = 0;
-    differencesDisplay.textContent = "Differences left: 0";
-
+   differencesDisplay.textContent = 0;
 });
