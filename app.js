@@ -22,6 +22,10 @@ const gridContainer = document.querySelector("#grid-container");
 const resultScreen = document.querySelector("#result-screen");
 const resultMessage = document.querySelector("#result-message");
 const finalScore = document.querySelector("#final-score");
+
+const timerSound = new Audio("./sounds/time.wav");
+const winSound = new Audio("./sounds/win.wav");
+const loseSound = new Audio("./sounds/loss.wav");
 let correctDifferences = [2, 6, 9];
 
 let score = 0;
@@ -70,6 +74,7 @@ function createGrid() {
     
 resultIcon.textContent = "⭐🎊✨";
 finalScore.textContent = "Score: " + score;
+winSound.play();
 confetti();
 }
 
@@ -92,7 +97,7 @@ createGrid();
 
 
 function startTimer() {
-
+ 
     clearInterval(timer);
 
     timer = setInterval(function () {
@@ -100,6 +105,8 @@ function startTimer() {
         time--;
 
         timerDisplay.textContent = time;
+        timerSound.play();
+        
 
 
         if (time <= 10 && time > 0) {
@@ -120,6 +127,7 @@ function startTimer() {
             clearInterval(timer);
 
             timerDisplay.textContent = 0;
+            loseSound.play();
 
             gameScreen.style.display = "none";
 
@@ -130,6 +138,7 @@ function startTimer() {
             resultIcon.textContent = "⏰";
 
             finalScore.textContent = "Score: " + score;
+            
 
         }
 
