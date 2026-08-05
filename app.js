@@ -64,6 +64,9 @@ function createGrid() {
                 if (differencesLeft === 0) {
 
     clearInterval(timer);
+    timerSound.pause();
+    timerSound.currentTime = 0;
+
 
     gameScreen.style.display = "none";
 
@@ -99,6 +102,9 @@ createGrid();
 function startTimer() {
  
     clearInterval(timer);
+    timerSound.pause();
+    timerSound.currentTime = 0;
+
 
     timer = setInterval(function () {
 
@@ -238,6 +244,9 @@ correctDifferences = [2, 7,8, 9, 10, 12,20,21,22,23,24];
 backButton.addEventListener("click", function () {
 
     clearInterval(timer);
+    timerSound.pause();
+    timerSound.currentTime = 0;
+
 
     gameScreen.style.display = "none";
 
@@ -247,6 +256,9 @@ backButton.addEventListener("click", function () {
 restartButton.addEventListener("click", function () {
 
     clearInterval(timer);
+    timerSound.pause();
+    timerSound.currentTime = 0;
+
 
     resultScreen.style.display = "none";
 
