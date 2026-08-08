@@ -53,6 +53,8 @@ function createGrid() {
         box.addEventListener("click", function () {
 
             const boxNumber = Number(box.dataset.number);
+            
+
 
             if (correctDifferences.includes(boxNumber)) {
 
@@ -82,7 +84,7 @@ confetti();
 }
 
 
-                //console.log("Score:", score);
+               
 
                 box.style.backgroundColor = "rgba(46,196,182,0.5)";
 
@@ -127,7 +129,7 @@ function startTimer() {
 
         }
 
-
+ 
         if (time <= 0) {
 
             clearInterval(timer);
@@ -151,7 +153,7 @@ function startTimer() {
     }, 1000);
 
 }
-// Start Button
+
 startButton.addEventListener("click", function () {
 
     startScreen.style.display = "none";
@@ -161,7 +163,7 @@ startButton.addEventListener("click", function () {
 });
 
 
-// Easy Level
+
 easyButton.addEventListener("click", function () {
 
     score = 0;
@@ -192,7 +194,6 @@ easyButton.addEventListener("click", function () {
 });
 
 
-// Medium Level
 mediumButton.addEventListener("click", function () {
 
     difficultyScreen.style.display = "none";
@@ -217,7 +218,7 @@ startTimer();
 });
 
 
-// Hard Level
+
 hardButton.addEventListener("click", function () {
 
     difficultyScreen.style.display = "none";
