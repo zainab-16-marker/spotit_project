@@ -1,7 +1,7 @@
 # Spot It! 🎮
 
 ## Project Description
-![Spot It Game Screenshot](images/ss.jpg)
+![Spot It Game Screenshot](imges/ss.jpg)
 Spot It! is an interactive "Find the Differences" game where players compare two images and find the hidden differences before the timer runs out.
 
 The game provides multiple difficulty levels with different images, number of differences, and time limits.
