@@ -1,7 +1,7 @@
 # Spot It! 🎮
 
 ## Project Description
-
+![Spot It Game Screenshot](ss.jpg)
 Spot It! is an interactive "Find the Differences" game where players compare two images and find the hidden differences before the timer runs out.
 
 The game provides multiple difficulty levels with different images, number of differences, and time limits.
@@ -78,3 +78,10 @@ The game provides multiple difficulty levels with different images, number of di
 
 ---
 
+### Play the Game
+
+[Play Spot It!](https://zainab-16-marker.github.io/spotit_project/)
+
+### Planning Materials
+
+[View Planning Materials](https://docs.google.com/document/d/1YL4TPKyao66ZiWr_wegCN6bnTB-To2vsFaG7fUhHWUU/edit?tab=t.0)
